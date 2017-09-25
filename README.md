@@ -12,9 +12,10 @@ There's some TODO's that you need to replace, specially the one in roles configu
 
 
 In order to start the project, you need at least:
+ * [**PHP**][10]
  * [**Composer**][1]
  * [**MariaDB**][2] (To me, the better option today)
- * [**PHP**][10]
+ 
  
 
 Installing the project 
