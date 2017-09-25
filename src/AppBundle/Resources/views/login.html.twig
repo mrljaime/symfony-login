@@ -1,0 +1,20 @@
+{% extends "AppBundle::layout.html.twig" %}
+{% block content %}
+    <div class="container-fluid" style="margin-top: 50px;">
+        <form action="{{ path("login.check") }}" method="post">
+            <div class="no-float col-md-4 center-block">
+                <label for="_username">Nombre de usuario</label>
+                <input type="text" id="_username" name="_username" required class="form-control"
+                    value="{{ username }}">
+                <label for="_password">Contraseña</label>
+                <input type="password" id="_password" name="_password" required class="form-control">
+
+                {% if error %}
+                    <p style="color: #982A29">{{ error.message|replace({ "Bad credentials.": "El usuario y la contraseña no son correctos" }) }}</p>
+                {% endif %}
+
+                <button class="btn btn-primary btn-block" style="margin-top: 20px;">Ingresar</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

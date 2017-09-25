@@ -1,0 +1,49 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+    # Define provider with User entity under property username. If you want, you can change by email
+        users:
+            entity:
+                class: AppBundle:User
+                property: username
+
+        in_memory:
+            memory: ~
+
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login_form:
+            pattern: ^/project/login|^/project/register
+            security: false
+
+        secured_area:
+            pattern: ^/project/*
+            form_login:
+                login_path: /project/login
+                check_path: /project/checkLogin
+                default_target_path: /project/
+            logout:
+                path: /project/logout
+                target: /project/login
+            provider: users
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~

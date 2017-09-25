@@ -1,0 +1,13 @@
+{% extends "AppBundle::layout.html.twig" %}
+{% block content %}
+    <div class="container-fluid" style="margin-top: 40px;">
+        <div class="no-float col-md-4 center-block">
+            {{ form_start(form, {"method": "post", "action": path("login.register")}) }}
+            {{ form_end(form) }}
+        </div>
+        <div style="color: red;">
+            {{ form_errors(form) }}
+        </div>
+    </div>
+
+{% endblock %}
