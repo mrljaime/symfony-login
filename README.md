@@ -14,6 +14,7 @@ There's some TODO's that you need to replace, specially the one in roles configu
 In order to start the project, you need at least:
  * [**Composer**][1]
  * [**MariaDB**][2] (To me, the better option today)
+ * [**PHP**][10]
  
 
 Installing the project 
@@ -40,3 +41,4 @@ All information about build this little config steps is here:
 [1]:  https://getcomposer.org/download/
 [2]:  https://mariadb.com/products/technology/server
 [3]:  http://symfony.com/doc/current/security/form_login_setup.html
+[10]: http://php.net/downloads.php
